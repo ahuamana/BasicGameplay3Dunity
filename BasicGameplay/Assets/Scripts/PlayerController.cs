@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float horizontalInput;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed = 10.0f;
+    public float xRange = 10.0f;
 
-    // Update is called once per frame
+    public GameObject projectilePrefab;
+
     void Update()
     {
          horizontalInput=Input.GetAxis("Horizontal");
+         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        //Run 
+        ////Condicion
+        if (transform.position.x < -xRange)
+        {
+            //siempre quedarse en este bloque
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            //siempre quedarse en este bloque
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Launch a projectile from the player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
+
     }
 }
