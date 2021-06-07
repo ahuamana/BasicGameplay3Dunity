@@ -64,6 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Challenge 2\Scripts\DestroyOutOfBoundsX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\DetectCollisionsX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\MoveForwardX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\PlayerControllerX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\SpawnManagerX.cs" />
     <Compile Include="Assets\Scripts\Destroy\DestroyOutOfBounds.cs" />
     <Compile Include="Assets\Scripts\Destroy\DetectCollisons.cs" />
     <Compile Include="Assets\Scripts\Enemies\SpawnManager.cs" />
